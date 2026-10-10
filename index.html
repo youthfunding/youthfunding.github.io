@@ -77,18 +77,21 @@ header .btn.gold:active{transform:translateY(0) scale(.97)}
 @media(max-width:700px){.btn.gold.hero-apply{padding:15px 28px;font-size:13.5px;letter-spacing:1.3px}}
 @media(prefers-reduced-motion:reduce){.btn.gold.hero-apply::before{animation:none}}
 @media(max-width:700px){.logo img.wm{height:clamp(24px,7.2vw,30px);width:auto;flex-shrink:0}}
-.rules-sub{display:flex;align-items:center;gap:16px;margin:6px 0 20px;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}.rules-sub::before,.rules-sub::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,#3a2f14)}.rules-sub::after{background:linear-gradient(270deg,transparent,#3a2f14)}.rules-sub.no{color:#e0786b;margin-top:42px}.rules-sub.no::before{background:linear-gradient(90deg,transparent,#4a2420)}.rules-sub.no::after{background:linear-gradient(270deg,transparent,#4a2420)}
-.rcards{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
-.rcard{position:relative;flex:0 1 calc(33.333% - 11px);min-width:240px;padding:24px 22px 22px;border:1px solid #2a2210;border-radius:14px;background:linear-gradient(145deg,#12100a,#090806);transition:transform .25s,border-color .25s,box-shadow .25s}
-.rcard:hover{transform:translateY(-3px);border-color:#6b5517;box-shadow:0 12px 30px rgba(212,175,55,.12)}
-.rnum{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;margin-bottom:14px;border-radius:50%;font-style:normal;font-weight:800;font-size:13px;letter-spacing:.5px;color:#120d00;background:linear-gradient(135deg,#f3d77a,#d4af37 50%,#a9821c);box-shadow:0 4px 12px rgba(212,175,55,.25)}
-.rcard h4{font-size:17px;margin-bottom:6px;color:#f3efe2}
-.rcard p{color:var(--muted);font-size:14px;line-height:1.55}
-.rcard.no{border-color:#3a1c19;background:linear-gradient(145deg,#140c0b,#090605)}
-.rcard.no:hover{border-color:#7a2f29;box-shadow:0 12px 30px rgba(200,70,55,.14)}
-.rcard.no .rnum{color:#fff;font-size:15px;background:linear-gradient(135deg,#d9604f,#a93426);box-shadow:0 4px 12px rgba(200,70,55,.25)}
-.rcard.no h4{color:#f6d9d4}
-@media(max-width:700px){.rcard{flex:1 1 100%;min-width:0;display:grid;grid-template-columns:42px 1fr;column-gap:14px;align-items:start;padding:16px 16px}.rcard .rnum{grid-row:1/3;margin:2px 0 0;width:40px;height:40px}.rcard h4{margin:0 0 3px;font-size:16px}.rcard p{font-size:13.5px}.rcards{gap:12px}.rules-sub{font-size:12px;letter-spacing:2.5px}.rules-sub.no{margin-top:32px}}
+
+#rules{padding:50px 0}#rules .section-title{margin-bottom:24px}
+.rpanel{display:grid;grid-template-columns:1.15fr 1fr;border:1px solid #2a2210;border-radius:16px;background:linear-gradient(145deg,#12100a,#080705);overflow:hidden;max-width:900px;margin:0 auto}
+.rcol{padding:20px 26px 12px}
+.rcol.no{background:linear-gradient(145deg,#140c0b,#090605);border-left:1px solid #3a1c19}
+.rhead{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.rcol.no .rhead{color:#e0786b}
+.rlist{list-style:none;margin:0;padding:0}
+.rlist li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,.06)}
+.rlist li:first-child{border-top:0}
+.rlist i{flex:none;display:flex;align-items:center;justify-content:center;width:24px;height:24px;margin-top:1px;border-radius:50%;font-style:normal;font-size:11px;font-weight:800;color:#120d00;background:linear-gradient(135deg,#f3d77a,#d4af37 50%,#a9821c)}
+.rcol.no .rlist i{color:#fff;background:linear-gradient(135deg,#d9604f,#a93426)}
+.rlist b{display:block;font-size:14.5px;color:#f3efe2}
+.rlist span{display:block;font-size:13px;line-height:1.45;color:var(--muted)}
+@media(max-width:700px){#rules{padding:36px 0}.rpanel{grid-template-columns:1fr}.rcol{padding:16px 16px 6px}.rcol.no{border-left:0;border-top:1px solid #3a1c19}.rlist li{padding:9px 0}}
 </style>
 </head>
 <body>
@@ -139,19 +142,25 @@ header .btn.gold:active{transform:translateY(0) scale(.97)}
 <section id="rules">
 <div class="container">
 <div class="section-title"><h2>Program Rules</h2><p>Trade with discipline. Protect the opportunity.</p></div>
-<h3 class="rules-sub"><span>The Basics</span></h3>
-<div class="rcards">
-<div class="rcard"><i class="rnum">01</i><h4>Account</h4><p>100,000 PKR demo balance</p></div>
-<div class="rcard"><i class="rnum">02</i><h4>Trading</h4><p>Your own strategy and decisions</p></div>
-<div class="rcard"><i class="rnum">03</i><h4>Objective</h4><p>Grow the account while respecting risk rules</p></div>
-<div class="rcard"><i class="rnum">04</i><h4>Payout</h4><p>Subject to eligibility and verification</p></div>
-<div class="rcard"><i class="rnum">05</i><h4>Weekly Limit</h4><p>Maximum 50,000 PKR withdrawal</p></div>
+<div class="rpanel">
+<div class="rcol">
+<h3 class="rhead">The Basics</h3>
+<ul class="rlist">
+<li><i>1</i><div><b>Account</b><span>100,000 PKR demo balance</span></div></li>
+<li><i>2</i><div><b>Trading</b><span>Your own strategy and decisions</span></div></li>
+<li><i>3</i><div><b>Objective</b><span>Grow the account while respecting risk rules</span></div></li>
+<li><i>4</i><div><b>Payout</b><span>Subject to eligibility and verification</span></div></li>
+<li><i>5</i><div><b>Weekly Limit</b><span>Maximum 50,000 PKR withdrawal</span></div></li>
+</ul>
 </div>
-<h3 class="rules-sub no"><span>Not Allowed</span></h3>
-<div class="rcards">
-<div class="rcard no"><i class="rnum">&#10005;</i><h4>No News Trading</h4><p>Trading during high-impact news releases is not allowed</p></div>
-<div class="rcard no"><i class="rnum">&#10005;</i><h4>No HFT / Algo Trading</h4><p>High-frequency and automated or algorithmic trading (bots, EAs) is not allowed</p></div>
-<div class="rcard no"><i class="rnum">&#10005;</i><h4>No Cheating</h4><p>No manipulation or other prohibited activity</p></div>
+<div class="rcol no">
+<h3 class="rhead">Not Allowed</h3>
+<ul class="rlist">
+<li><i>&#10005;</i><div><b>No News Trading</b><span>No trading during high-impact news releases</span></div></li>
+<li><i>&#10005;</i><div><b>No HFT / Algo Trading</b><span>No high-frequency trading, bots or EAs</span></div></li>
+<li><i>&#10005;</i><div><b>No Cheating</b><span>No manipulation or other prohibited activity</span></div></li>
+</ul>
+</div>
 </div>
 </div>
 </section>
