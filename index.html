@@ -77,6 +77,18 @@ header .btn.gold:active{transform:translateY(0) scale(.97)}
 @media(max-width:700px){.btn.gold.hero-apply{padding:15px 28px;font-size:13.5px;letter-spacing:1.3px}}
 @media(prefers-reduced-motion:reduce){.btn.gold.hero-apply::before{animation:none}}
 @media(max-width:700px){.logo img.wm{height:clamp(24px,7.2vw,30px);width:auto;flex-shrink:0}}
+.rules-sub{display:flex;align-items:center;gap:16px;margin:6px 0 20px;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}.rules-sub::before,.rules-sub::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,#3a2f14)}.rules-sub::after{background:linear-gradient(270deg,transparent,#3a2f14)}.rules-sub.no{color:#e0786b;margin-top:42px}.rules-sub.no::before{background:linear-gradient(90deg,transparent,#4a2420)}.rules-sub.no::after{background:linear-gradient(270deg,transparent,#4a2420)}
+.rcards{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+.rcard{position:relative;flex:0 1 calc(33.333% - 11px);min-width:240px;padding:24px 22px 22px;border:1px solid #2a2210;border-radius:14px;background:linear-gradient(145deg,#12100a,#090806);transition:transform .25s,border-color .25s,box-shadow .25s}
+.rcard:hover{transform:translateY(-3px);border-color:#6b5517;box-shadow:0 12px 30px rgba(212,175,55,.12)}
+.rnum{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;margin-bottom:14px;border-radius:50%;font-style:normal;font-weight:800;font-size:13px;letter-spacing:.5px;color:#120d00;background:linear-gradient(135deg,#f3d77a,#d4af37 50%,#a9821c);box-shadow:0 4px 12px rgba(212,175,55,.25)}
+.rcard h4{font-size:17px;margin-bottom:6px;color:#f3efe2}
+.rcard p{color:var(--muted);font-size:14px;line-height:1.55}
+.rcard.no{border-color:#3a1c19;background:linear-gradient(145deg,#140c0b,#090605)}
+.rcard.no:hover{border-color:#7a2f29;box-shadow:0 12px 30px rgba(200,70,55,.14)}
+.rcard.no .rnum{color:#fff;font-size:15px;background:linear-gradient(135deg,#d9604f,#a93426);box-shadow:0 4px 12px rgba(200,70,55,.25)}
+.rcard.no h4{color:#f6d9d4}
+@media(max-width:700px){.rcard{flex:1 1 100%;min-width:0;display:grid;grid-template-columns:42px 1fr;column-gap:14px;align-items:start;padding:16px 16px}.rcard .rnum{grid-row:1/3;margin:2px 0 0;width:40px;height:40px}.rcard h4{margin:0 0 3px;font-size:16px}.rcard p{font-size:13.5px}.rcards{gap:12px}.rules-sub{font-size:12px;letter-spacing:2.5px}.rules-sub.no{margin-top:32px}}
 </style>
 </head>
 <body>
@@ -127,13 +139,19 @@ header .btn.gold:active{transform:translateY(0) scale(.97)}
 <section id="rules">
 <div class="container">
 <div class="section-title"><h2>Program Rules</h2><p>Trade with discipline. Protect the opportunity.</p></div>
-<div class="rules">
-<div class="rule"><b>Account:</b> 100,000 PKR demo balance</div>
-<div class="rule"><b>Trading:</b> Your own strategy and decisions</div>
-<div class="rule"><b>Objective:</b> Grow the account while respecting risk rules</div>
-<div class="rule"><b>Payout:</b> Subject to eligibility and verification</div>
-<div class="rule"><b>Weekly limit:</b> Maximum 50,000 PKR withdrawal</div>
-<div class="rule"><b>Conduct:</b> No cheating, manipulation, or prohibited activity</div>
+<h3 class="rules-sub"><span>The Basics</span></h3>
+<div class="rcards">
+<div class="rcard"><i class="rnum">01</i><h4>Account</h4><p>100,000 PKR demo balance</p></div>
+<div class="rcard"><i class="rnum">02</i><h4>Trading</h4><p>Your own strategy and decisions</p></div>
+<div class="rcard"><i class="rnum">03</i><h4>Objective</h4><p>Grow the account while respecting risk rules</p></div>
+<div class="rcard"><i class="rnum">04</i><h4>Payout</h4><p>Subject to eligibility and verification</p></div>
+<div class="rcard"><i class="rnum">05</i><h4>Weekly Limit</h4><p>Maximum 50,000 PKR withdrawal</p></div>
+</div>
+<h3 class="rules-sub no"><span>Not Allowed</span></h3>
+<div class="rcards">
+<div class="rcard no"><i class="rnum">&#10005;</i><h4>No News Trading</h4><p>Trading during high-impact news releases is not allowed</p></div>
+<div class="rcard no"><i class="rnum">&#10005;</i><h4>No HFT / Algo Trading</h4><p>High-frequency and automated or algorithmic trading (bots, EAs) is not allowed</p></div>
+<div class="rcard no"><i class="rnum">&#10005;</i><h4>No Cheating</h4><p>No manipulation or other prohibited activity</p></div>
 </div>
 </div>
 </section>
