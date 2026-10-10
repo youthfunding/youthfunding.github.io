@@ -58,6 +58,14 @@ header .btn.gold:active{transform:translateY(0) scale(.97)}
 @media(min-width:701px){header .btn.gold::after{content:"\2192";margin-left:9px;display:inline-block;transition:transform .2s}header .btn.gold:hover::after{transform:translateX(4px)}}
 @media(max-width:700px){header .btn.gold{padding:11px 15px;font-size:11.5px;letter-spacing:1px}}
 @media(prefers-reduced-motion:reduce){header .btn.gold::before{animation:none}}
+.btn.gold.hero-apply{position:relative;overflow:hidden;border:0;border-radius:999px;padding:17px 40px;font-size:15px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#120d00;background:linear-gradient(135deg,#f3d77a 0%,#d4af37 45%,#a9821c 100%);box-shadow:0 0 0 1px rgba(255,235,160,.35) inset,0 10px 28px rgba(212,175,55,.3);transition:transform .2s,box-shadow .25s}
+.btn.gold.hero-apply::before{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:shine 4.5s ease-in-out infinite}
+.btn.gold.hero-apply:hover{background:linear-gradient(135deg,#f3d77a 0%,#d4af37 45%,#a9821c 100%);transform:translateY(-2px);box-shadow:0 0 0 1px rgba(255,235,160,.5) inset,0 14px 34px rgba(212,175,55,.5)}
+.btn.gold.hero-apply:active{transform:scale(.97)}
+@media(min-width:701px){.btn.gold.hero-apply::after{content:"\2192";margin-left:12px;display:inline-block;transition:transform .2s}.btn.gold.hero-apply:hover::after{transform:translateX(5px)}}
+@media(max-width:700px){.btn.gold.hero-apply{padding:15px 28px;font-size:13.5px;letter-spacing:1.3px}}
+@media(prefers-reduced-motion:reduce){.btn.gold.hero-apply::before{animation:none}}
+@media(max-width:700px){.logo img.wm{height:clamp(24px,7.2vw,30px);width:auto;flex-shrink:0}}
 </style>
 </head>
 <body>
@@ -77,7 +85,7 @@ header .btn.gold:active{transform:translateY(0) scale(.97)}
 <h1>Trade. Prove.<br><span class="goldtext">Get Funded.</span></h1>
 <p>YouthFunding gives selected traders the opportunity to prove their trading skills using a 100,000 PKR demo account — with the potential to qualify for real cash payouts.</p>
 <div class="actions">
-<a class="btn gold" href="#apply">Apply to YouthFunding</a>
+<a class="btn gold hero-apply" href="#apply">Apply to YouthFunding</a>
 <a class="btn outline" href="#how">See How It Works</a>
 </div>
 </div>
