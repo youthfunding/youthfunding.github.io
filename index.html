@@ -45,6 +45,7 @@ input,textarea,select{width:100%;background:#090909;border:1px solid #292929;col
 input:focus,textarea:focus,select:focus{border-color:var(--gold)}
 textarea{min-height:130px;resize:vertical}.full{grid-column:1/-1}
 .form-note{font-size:12px;color:#777;margin-top:12px}
+.drop{max-width:650px;margin:auto;border:1px solid #3a2f14;border-radius:12px;background:#0c0a05;overflow:hidden}.drop summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:18px 22px;font-size:20px;font-weight:800;color:var(--gold)}.drop summary::-webkit-details-marker{display:none}.drop summary i{width:10px;height:10px;border-right:3px solid var(--gold);border-bottom:3px solid var(--gold);transform:rotate(45deg);transition:transform .25s;margin-top:-4px}.drop[open] summary i{transform:rotate(-135deg);margin-top:4px}.drop-body{padding:4px 22px 24px}.drop-note{color:var(--muted);margin-bottom:16px;font-size:14px}
 .agree{margin-top:16px;padding:16px;border:1px solid #3a2f14;border-radius:10px;background:#0c0a05;font-size:14px}.agree p{margin-bottom:10px;color:var(--muted)}.agree a{color:var(--gold);text-decoration:underline}.agree label{display:flex;gap:10px;align-items:flex-start;cursor:pointer}.agree input{width:auto;margin-top:5px;accent-color:var(--gold)}
 footer{border-top:1px solid #181818;padding:30px 0;color:#777;font-size:13px;text-align:center}
 @media(max-width:700px){nav{display:none}.nav{gap:8px}.logo{font-size:16px;gap:6px;letter-spacing:0;white-space:nowrap}.logo img{height:36px}header .btn{padding:9px 13px;font-size:13px;white-space:nowrap}.grid,.rules,.form-grid{grid-template-columns:1fr}.hero{padding:80px 0 65px}section{padding:55px 0}.card{padding:22px}h1{font-size:47px}.full{grid-column:auto}}
@@ -54,7 +55,7 @@ footer{border-top:1px solid #181818;padding:30px 0;color:#777;font-size:13px;tex
 <header>
 <div class="container nav">
 <a href="#" class="logo"><img src="logo-icon.png" alt="YouthFunding logo">YOUTH<span>FUNDING</span></a>
-<nav><a href="#how">How It Works</a><a href="#rules">Rules</a><a href="#payouts">Payouts</a><a href="#apply">Apply</a></nav>
+<nav><a href="#how">How It Works</a><a href="#rules">Rules</a><a href="#payouts">Payouts</a><a href="#apply">Apply</a><a href="#withdraw">Withdraw</a></nav>
 <a class="btn gold" href="#apply">Apply Now</a>
 </div>
 </header>
@@ -128,7 +129,7 @@ footer{border-top:1px solid #181818;padding:30px 0;color:#777;font-size:13px;tex
 <div class="form-grid">
 <input required name="name" placeholder="Full name">
 <input required type="email" name="email" placeholder="Email address">
-<input required type="tel" name="phone" placeholder="Phone / WhatsApp number (e.g. 03XXXXXXXXX)">
+<input required type="tel" name="phone" placeholder="Phone / WhatsApp number">
 <input name="experience" placeholder="Trading experience">
 <select required name="plan" class="full"><option value="">Select your plan</option><option value="5000 PKR - 5 Payouts">5,000 PKR — 5 Payouts</option><option value="10000 PKR - 10 Payouts">10,000 PKR — 10 Payouts</option></select>
 <input class="full" name="referral_code" placeholder="Referral code (optional)">
@@ -143,6 +144,34 @@ footer{border-top:1px solid #181818;padding:30px 0;color:#777;font-size:13px;tex
 </form>
 </div>
 </section>
+
+<section id="withdraw">
+<div class="container">
+<details class="drop" id="withdrawBox">
+<summary><span>Request a Withdrawal</span><i></i></summary>
+<div class="drop-body">
+<p class="drop-note">Funded traders can submit a payout request here. Requests are reviewed and verified before payment.</p>
+<form action="https://formsubmit.co/samadcapital.pvt@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="New YouthFunding Withdrawal Request">
+<input type="hidden" name="_captcha" value="false">
+<div class="form-grid">
+<input required name="name" placeholder="Full name">
+<input required name="trading_id" placeholder="Trading ID">
+<input required type="number" name="amount_pkr" min="1" step="1" inputmode="numeric" placeholder="Withdrawal amount (PKR)">
+<input required type="email" name="email" placeholder="Email address">
+<input required type="tel" name="phone" placeholder="Phone / WhatsApp number">
+<input required name="account_number" placeholder="E-Wallet or Bank account number">
+</div>
+<button class="btn gold" style="margin-top:15px;cursor:pointer" type="submit">Submit Withdrawal Request</button>
+<p class="form-note">Double-check your account number before submitting. Questions? <a href="https://wa.me/923322990465" target="_blank" rel="noopener" style="color:var(--gold)">WhatsApp: 0332 2990465</a></p>
+</form>
+</div>
+</details>
+</div>
+</section>
+<script>
+(function(){var d=document.getElementById("withdrawBox");function chk(){if(location.hash==="#withdraw"){d.open=true}}window.addEventListener("hashchange",chk);chk();})();
+</script>
 </main>
 
 <footer>
