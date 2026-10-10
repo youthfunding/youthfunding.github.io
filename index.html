@@ -92,13 +92,35 @@ header .btn.gold:active{transform:translateY(0) scale(.97)}
 .rlist b{display:block;font-size:14.5px;color:#f3efe2}
 .rlist span{display:block;font-size:13px;line-height:1.45;color:var(--muted)}
 @media(max-width:700px){#rules{padding:36px 0}.rpanel{grid-template-columns:1fr}.rcol{padding:16px 16px 6px}.rcol.no{border-left:0;border-top:1px solid #3a1c19}.rlist li{padding:9px 0}}
+#referral{padding:50px 0}
+.refer{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:40px;max-width:900px;margin:0 auto;padding:34px 40px;border:1px solid #6b5517;border-radius:20px;background:radial-gradient(circle at 0% 50%,rgba(212,175,55,.16),transparent 55%),linear-gradient(145deg,#14110a,#080705);box-shadow:0 0 40px rgba(212,175,55,.1)}
+.refer-num{text-align:center;padding-right:40px;border-right:1px solid #3a2f14}
+.refer-num b{display:block;font-size:84px;line-height:1;font-weight:900;background:linear-gradient(135deg,#f3d77a,#d4af37 50%,#a9821c);-webkit-background-clip:text;background-clip:text;color:transparent}
+.refer-num small{font-size:44px}
+.refer-num span{display:block;margin-top:6px;font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--gold)}
+.refer-body h2{font-size:30px;margin-bottom:8px}
+.refer-body p{color:#cfcab9;font-size:18px;line-height:1.6}
+.refer-body p b{color:var(--gold)}
+.refer-steps{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin:0 0 20px;padding:0}
+.refer-steps li{display:flex;align-items:center;gap:8px;padding:7px 14px 7px 8px;border:1px solid #3a2f14;border-radius:999px;background:#0c0a05;font-size:13px;color:#d8d3c4}
+.refer-steps i{display:flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;font-style:normal;font-size:11px;font-weight:800;color:#120d00;background:linear-gradient(135deg,#f3d77a,#d4af37 50%,#a9821c)}
+.refer-body .actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-start}
+@media(max-width:700px){#referral{padding:36px 0}.refer{grid-template-columns:1fr;gap:18px;padding:26px 20px;text-align:center}.refer-num{padding:0 0 18px;border-right:0;border-bottom:1px solid #3a2f14}.refer-num b{font-size:72px}.refer-steps{justify-content:center}.refer-body .actions{justify-content:center}.refer-body h2{font-size:26px}}
+/* withdrawal dropdown matches buttons */
+.drop{border:0;background:none;border-radius:0;overflow:visible}
+.drop summary{position:relative;overflow:hidden;justify-content:center;gap:14px;max-width:420px;margin:0 auto;padding:15px 34px;border-radius:999px;font-size:14px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:#120d00;background:linear-gradient(135deg,#f3d77a 0%,#d4af37 45%,#a9821c 100%);box-shadow:0 0 0 1px rgba(255,235,160,.35) inset,0 8px 22px rgba(212,175,55,.28);transition:transform .2s,box-shadow .25s}
+.drop summary::before{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:shine 4.5s ease-in-out infinite;pointer-events:none}
+.drop summary:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(255,235,160,.5) inset,0 12px 30px rgba(212,175,55,.45)}
+.drop summary i{border-color:#120d00;border-width:0 3px 3px 0;width:9px;height:9px}
+.drop-body{margin-top:16px;padding:22px 22px 24px;border:1px solid #3a2f14;border-radius:14px;background:#0c0a05}
+@media(max-width:700px){.drop summary{padding:14px 26px;font-size:13px;letter-spacing:1.3px}}
 </style>
 </head>
 <body>
 <header>
 <div class="container nav">
 <a href="#" class="logo"><img src="logo-icon.png" alt="" class="em"><img src="logo-wordmark.png" alt="YouthFunding" class="wm"></a>
-<nav><a href="#how">How It Works</a><a href="#rules">Rules</a><a href="#payouts">Payouts</a><a href="#apply">Apply</a><a href="#withdraw">Withdraw</a></nav>
+<nav><a href="#how">How It Works</a><a href="#rules">Rules</a><a href="#payouts">Payouts</a><a href="#referral">Referral</a><a href="#apply">Apply</a><a href="#withdraw">Withdraw</a></nav>
 <a class="btn gold" href="#apply">Apply Now</a>
 </div>
 </header>
@@ -139,6 +161,17 @@ header .btn.gold:active{transform:translateY(0) scale(.97)}
 </div>
 </section>
 
+<section id="referral">
+<div class="container">
+<div class="refer">
+<div class="refer-num"><b>20<small>%</small></b><span>Commission</span></div>
+<div class="refer-body">
+<h2>Earn by Referral</h2>
+<p>Refer and get <b>20% commission</b>.</p>
+</div>
+</div>
+</div>
+</section>
 <section id="rules">
 <div class="container">
 <div class="section-title"><h2>Program Rules</h2><p>Trade with discipline. Protect the opportunity.</p></div>
@@ -191,7 +224,7 @@ header .btn.gold:active{transform:translateY(0) scale(.97)}
 <textarea class="full" required name="message" placeholder="Tell us about your trading strategy and experience"></textarea>
 </div>
 <div class="agree">
-<p>Please read the <a href="agreement.pdf" target="_blank" rel="noopener">YouthFunding Agreement (PDF)</a> before applying.</p>
+<p>Please read the <a href="YouthFunding_Agreement_v2.pdf" target="_blank" rel="noopener">YouthFunding Agreement (PDF)</a> before applying.</p>
 <label><input required type="checkbox" name="agreement" value="I Agree"> <span><b>I Agree</b> — I have read and accept the YouthFunding Agreement.</span></label>
 </div>
 <button class="btn gold" style="margin-top:15px;cursor:pointer" type="submit">Submit Application</button>
